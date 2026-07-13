@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include<iomanip>
 using namespace std;
 
 class Bankaccount {
@@ -19,24 +20,40 @@ public:
         cin >> balance;
     }
 
-    void showAccount() {
-        cout << "\nAccount No: " << accNo;
-        cout << "\nName: " << name;
-        cout << "\nBalance: " << balance << endl;
-    }
+  void showAccount() {
+    cout << fixed << setprecision(2);
+
+    cout << "\n==============================";
+    cout << "\nAccount No      : " << accNo;
+    cout << "\nAccount Holder  : " << name;
+    cout << "\nBalance         : ₹" << balance;
+    cout << "\n==============================\n";
+}
 
     void deposit() {
         float amt;
         cout << "Enter amount to deposit: ";
         cin >> amt;
-        balance += amt;
-        cout << "Amount Deposited Successfully!\n";
-    }
+        
+       if(amt<=0)
+{
+    cout<<"Invalid Amount!\n";
+    return;
+}
+
+balance+=amt;
+     cout<<"\n=================================\n";
+cout<<"Deposit Successful\n";
+cout<<"Updated Balance : ₹"<<balance;
+cout<<"\n=================================\n";
+}
 
     void withdraw() {
         float amt;
-        cout << "Enter amount to withdraw: ";
-        cin >> amt;
+      cout << "\nWithdrawal Successful!\n";
+cout << "Remaining Balance : ₹" << fixed << setprecision(2) << balance << endl;
+        
+
         if (amt <= balance) {
             balance -= amt;
             cout << "Withdraw Successful!\n";
@@ -50,13 +67,42 @@ public:
     }
 };
 
-
-void writeAccount() {
+bool accountExists(int accNo)
+{
     Bankaccount acc;
-    ofstream outFile("bank.dat", ios::binary | ios::app);
+    ifstream file("bank.dat", ios::binary);
+
+    while(file.read(reinterpret_cast<char*>(&acc), sizeof(acc)))
+    {
+        if(acc.getAccNo()==accNo)
+        {
+            file.close();
+            return true;
+        }
+    }
+
+    file.close();
+    return false;
+}
+void writeAccount()
+{
+    Bankaccount acc;
+
     acc.createAccount();
+
+    if(accountExists(acc.getAccNo()))
+    {
+        cout<<"\nAccount Number Already Exists!\n";
+        return;
+    }
+
+    ofstream outFile("bank.dat", ios::binary|ios::app);
+
     outFile.write(reinterpret_cast<char*>(&acc), sizeof(acc));
+
     outFile.close();
+
+    cout<<"\nAccount Created Successfully.\n";
 }
 
 
@@ -111,14 +157,22 @@ int main() {
     int choice, accNo;
 
     do {
-        cout << "\n--- BANK MANAGEMENT SYSTEM ---";
-        cout << "\n1. Create Account";
-        cout << "\n2. Deposit";
-        cout << "\n3. Withdraw";
-        cout << "\n4. Check Balance";
-        cout << "\n5. Exit";
-        cout << "\nEnter your choice: ";
-        cin >> choice;
+    cout << "\n=========================================\n";
+cout << "        🏦 BANK MANAGEMENT SYSTEM\n";
+cout << "=========================================\n";
+cout << "1. Create Account\n";
+cout << "2. Deposit Money\n";
+cout << "3. Withdraw Money\n";
+cout << "4. Check Balance\n";
+cout << "5. Exit\n";
+cout << "=========================================\n";
+cout << "Enter Your Choice : ";
+   while(!(cin>>choice))
+{
+    cin.clear();
+    cin.ignore(1000,'\n');
+    cout<<"Invalid Input!\n";
+}
 
         switch (choice) {
         case 1:
@@ -140,7 +194,11 @@ int main() {
             displayAccount(accNo);
             break;
         case 5:
-            cout << "Thank you!\n";
+          cout<<"\n=================================\n";
+cout<<" Thank You For Using\n";
+cout<<" BANK MANAGEMENT SYSTEM\n";
+cout<<" Developed By Vansh Jha\n";
+cout<<"=================================\n";
             break;
         default:
             cout << "Invalid choice!\n";
