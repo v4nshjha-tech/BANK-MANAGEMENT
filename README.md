@@ -1,68 +1,85 @@
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:1E90FF&height=220&section=header&text=Bank%20Management%20System&fontSize=40&fontColor=ffffff"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:1E3A8A&height=220&section=header&text=🏦%20Bank%20Management%20System&fontSize=38&fontColor=ffffff&animation=fadeIn"/>
 </p>
 
-# 🏦 Bank Management System
+<h1 align="center">🏦 Bank Management System</h1>
 
-A professional Bank Management System developed in **C++** using **File Handling** concepts.
+<p align="center">
+A console-based <b>Bank Management System</b> developed in <b>C++</b> using <b>Object-Oriented Programming</b> and <b>File Handling</b>.
+</p>
 
----
+<p align="center">
 
-## 📌 Features
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
 
-✅ Create New Account
-
-✅ Deposit Money
-
-✅ Withdraw Money
-
-✅ Balance Inquiry
-
-✅ Update Account Details
-
-✅ Delete Account
-
-✅ File Handling
+</p>
 
 ---
 
-## 🛠 Tech Stack
+# 📌 Features
 
-- C++
-- File Handling
-- OOP Concepts
-- VS Code
+- ✅ Create New Account
+- 💰 Deposit Money
+- 💸 Withdraw Money
+- 📊 Check Balance
+- ✏️ Update Account Details
+- ❌ Delete Account
+- 💾 Permanent Data Storage using File Handling
+- 🔍 Search Existing Account
 
 ---
 
-## 📂 Project Structure
+# 🛠 Tech Stack
 
-```
-BANK-MANAGEMENT/
+| Technology | Purpose |
+|------------|----------|
+| C++ | Core Programming |
+| OOP | Classes & Objects |
+| File Handling | Data Storage |
+| VS Code | Development |
+
+---
+
+# 📂 Folder Structure
+
+```text
+BANK-MANAGEMENT
 │
-├── main.cpp
-├── Account.cpp
-├── Account.h
+├── cwh16.cpp
 ├── README.md
 ```
 
 ---
 
-## 🚀 How to Run
+# 🚀 Getting Started
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/v4nshjha-tech/BANK-MANAGEMENT.git
 ```
 
-### Compile
+---
+
+## Compile
 
 ```bash
 g++ cwh16.cpp -o bank
 ```
 
-### Run
+---
+
+## Run
+
+Windows
+
+```bash
+bank.exe
+```
+
+Linux / macOS
 
 ```bash
 ./bank
@@ -70,34 +87,71 @@ g++ cwh16.cpp -o bank
 
 ---
 
-## 📸 Screenshots
+# 📸 Output Screenshots
 
-### Home Screen
+### 🏠 Main Menu
 
-(Add Screenshot)
-
-### Account Menu
-
-(Add Screenshot)
-
-### Transaction
-
-(Add Screenshot)
+> Add Screenshot Here
 
 ---
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+### 💰 Deposit
 
-![GitHub Repo stars](https://img.shields.io/github/stars/v4nshjha-tech/BANK-MANAGEMENT?style=for-the-badge)
+> Add Screenshot Here
+
 ---
-## 👨‍💻 Author
+
+### 💸 Withdraw
+
+> Add Screenshot Here
+
+---
+
+### 📊 Balance Enquiry
+
+> Add Screenshot Here
+
+---
+
+# 📖 Concepts Used
+
+- Object-Oriented Programming
+- Classes & Objects
+- File Handling
+- Functions
+- Loops
+- Conditional Statements
+- Menu Driven Programming
+
+---
+
+# 📈 Future Improvements
+
+- 🔐 Login Authentication
+- 📜 Transaction History
+- 🔒 PIN Protection
+- 📊 Interest Calculation
+- 🖥 GUI Version
+
+---
+
+# 👨‍💻 Author
 
 **Vansh Jha**
 
-GitHub:
+📧 vanshjha3434@gmail.com
+
+🌐 GitHub:
 https://github.com/v4nshjha-tech
 
 ---
 
-⭐ If you like this project, don't forget to Star ⭐ this repository.
+<p align="center">
+
+⭐ If you found this project useful, please consider giving it a Star ⭐
+
+</p>
+
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:1E3A8A&height=120&section=footer"/>
+</p>
