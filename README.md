@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # BANK-MANAGEMENT
 This is a bank management system 
 =======
@@ -159,4 +158,4 @@ https://github.com/v4nshjha-tech
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:1E3A8A&height=120&section=footer"/>
 </p>
->>>>>>> 64c4e3c5b3c3590e24fdff5438880040e4f4daaa
+
