@@ -1,8 +1,6 @@
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-![GitHub Repo stars](https://img.shields.io/github/stars/v4nshjha-tech/BANK-MANAGEMENT?style=for-the-badge)
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:1E90FF&height=220&section=header&text=Bank%20Management%20System&fontSize=40&fontColor=ffffff"/>
+</p>
 
 # 🏦 Bank Management System
 
