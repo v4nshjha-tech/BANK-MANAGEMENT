@@ -23,11 +23,19 @@ public:
   void showAccount() {
     cout << fixed << setprecision(2);
 
+<<<<<<< HEAD
     cout << "\n==============================";
     cout << "\nAccount No      : " << accNo;
     cout << "\nAccount Holder  : " << name;
     cout << "\nBalance         : ₹" << balance;
     cout << "\n==============================\n";
+=======
+ cout << "\n==============================\n";
+cout << "Account Number : " << accNo << endl;
+cout << "Account Holder : " << name << endl;
+cout << "Balance        : Rs. " << fixed << setprecision(2) << balance << endl;
+cout << "==============================\n";
+>>>>>>> c24da26 (Added README and project screenshots)
 }
 
     void deposit() {
@@ -44,6 +52,7 @@ public:
 balance+=amt;
      cout<<"\n=================================\n";
 cout<<"Deposit Successful\n";
+<<<<<<< HEAD
 cout<<"Updated Balance : ₹"<<balance;
 cout<<"\n=================================\n";
 }
@@ -87,6 +96,66 @@ bool accountExists(int accNo)
 void writeAccount()
 {
     Bankaccount acc;
+=======
+cout<<"Updated Balance : Rs"<<balance;
+cout<<"\n=================================\n";
+}
+
+void withdraw()
+{
+    float amt;
+
+    cout << "Enter amount to withdraw: ";
+    cin >> amt;
+
+    if(amt <= 0)
+    {
+        cout << "Invalid Amount!\n";
+        return;
+    }
+
+    if(amt > balance)
+    {
+        cout << "Insufficient Balance!\n";
+        return;
+    }
+
+    balance -= amt;
+
+    cout << "\n=================================\n";
+    cout << "Withdrawal Successful\n";
+    cout << "Remaining Balance : Rs. "
+         << fixed << setprecision(2) << balance << endl;
+    cout << "=================================\n";
+}
+
+int getAccNo()
+{
+    return accNo;
+}
+};
+
+bool accountExists(int accNo)
+{
+    Bankaccount acc;
+    ifstream file("bank.dat", ios::binary);
+
+    while(file.read(reinterpret_cast<char*>(&acc), sizeof(acc)))
+    {
+        if(acc.getAccNo()==accNo)
+        {
+            file.close();
+            return true;
+        }
+    }
+
+    file.close();
+    return false;
+}
+void writeAccount()
+{
+    Bankaccount acc;
+>>>>>>> c24da26 (Added README and project screenshots)
 
     acc.createAccount();
 
@@ -130,21 +199,24 @@ void modifyAccount(int num, int type) {
     fstream file("bank.dat", ios::binary | ios::in | ios::out);
     bool found = false;
 
-    while (!file.eof() && !found) {
-        streampos pos = file.tellg();
-        file.read(reinterpret_cast<char*>(&acc), sizeof(acc));
+   while (file.read(reinterpret_cast<char*>(&acc), sizeof(acc)))
+{
+    streampos pos = file.tellg() - static_cast<streamoff>(sizeof(acc));
 
-        if (acc.getAccNo() == num) {
-            if (type == 1)
-                acc.deposit();
-            else
-                acc.withdraw();
+    if (acc.getAccNo() == num)
+    {
+        if(type == 1)
+            acc.deposit();
+        else
+            acc.withdraw();
 
-            file.seekp(pos);
-            file.write(reinterpret_cast<char*>(&acc), sizeof(acc));
-            found = true;
-        }
+        file.seekp(pos);
+        file.write(reinterpret_cast<char*>(&acc), sizeof(acc));
+
+        found = true;
+        break;
     }
+}
 
     if (!found)
         cout << "Account not found!\n";
